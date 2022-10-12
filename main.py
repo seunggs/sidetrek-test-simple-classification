@@ -6,6 +6,7 @@ import sklearn.metrics as metrics
 import pandas as pd
 import numpy as np
 import typing
+from dataclasses import dataclass
 
 
 @dataclass
