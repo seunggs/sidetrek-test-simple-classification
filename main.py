@@ -31,7 +31,6 @@ class Hyperparameters(object):
     n_classes: int = 2
     random_state: int = 42
     test_size: float = 0.33
-    model: RandomForestClassifier = RandomForestClassifier()
     
 
 # Collecting data for classification model
@@ -82,14 +81,13 @@ def split_train_test(feature: pd.DataFrame,
 X_train, X_test, y_train, y_test = split_train_test()
 
 # Creating the Multiple Linear Regression model
-def build_model(model: RandomForestClassifier,
-                X_train: pd.DataFrame,
+def build_model(X_train: pd.DataFrame,
                 y_train: pd.DataFrame) -> RandomForestClassifier:
     """
-    model: RandomForestClassifier = RandomForestClassifier(),
     X_train: pd.DataFrame = X_train,
     y_train: pd.DataFrame = y_train
     """
+    model = RandomForestClassifier()
     return model.fit(X_train, y_train)
 
 clf = build_model()
